@@ -17,7 +17,13 @@ pipeline {
                 }
             }
         }
-
+        
+        stage('taking snapshot'){
+                  echo "Now taking snapshot...."
+                  sh 'scp vagrant@192.168.2.49:/opt/wildfly/standalone/deployments/*.war /backup/$(date +%F-%H:%M).oldwar' 
+            
+            }
+        
         stage('Deploy to Production'){
             steps{
                 timeout(time:5, unit:'DAYS'){
