@@ -10,7 +10,9 @@ pipeline {
                     echo "Now Archiving the Artifacts...."
                     sh 'pwd'
                     sh 'ls -lhrt'
-                    archiveArtifacts artifacts: '**/*.war'
+                    sh 'cd target'
+                    sh 'ls -lhrt'
+                    archiveArtifacts artifacts: 'target/*.war'
                     
                 }
             }
