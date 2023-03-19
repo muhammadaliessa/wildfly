@@ -12,7 +12,7 @@ pipeline {
                     sh 'ls -lhrt'
                     sh 'cd target'
                     sh 'ls -lhrt'
-                    archiveArtifacts artifacts: '/var/lib/jenkins/workspace/wilfly/target/*.war'
+                    archiveArtifacts artifacts: 'target/*.war'
                     
                 }
             }
