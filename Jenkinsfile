@@ -21,7 +21,7 @@ pipeline {
         stage('taking snapshot'){
             steps{
                   echo "Now taking snapshot...."
-                  sh 'scp vagrant@192.168.2.49:/opt/wildfly/standalone/deployments/*.war /backup/$(date +%F-%H:%M).oldwar' 
+                  sh 'scp vagrant@192.168.2.49:/opt/wildfly/standalone/deployments/*.war /var/lib/jenkins/workspace/wilfly/backup/$(date +%F-%H:%M).oldwar' 
                 }
             }
         
